@@ -26,11 +26,10 @@ function bialeZnaki(string)
 }
 
 function poprawnyAdres(adres) {
-    let email_form = /^[a-zA-Z_0-9\.]+@[a-zA Z_0-9\.]+\.[a-zA-Z][a-zA-Z]+\$/;
+    let email_form = /[a-zA-Z_0-9\.]+@[a-zA Z_0-9\.]+\.[a-zA-Z][a-zA-Z]+/;
     if (email_form.test(adres))
         return true;
     else {
-        alert("Adres e-mail jest niepoprawny");
         return false;
     }
     }
@@ -52,6 +51,11 @@ function weryfikacja()
             return false;
         }
     }
-    return poprawnyAdres(document.forms["user_data"]["email"].value);
-    
+    if (!poprawnyAdres(document.forms["user_data"]["email"].value))
+    {
+        alert("Adres e-mail jest niepoprawny");
+        return false;
+    }
+    return true;
+
 }
