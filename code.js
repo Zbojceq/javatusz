@@ -32,7 +32,20 @@ function poprawnyAdres(adres) {
     else {
         return false;
     }
+}
+
+function walidacjaFocus(obiekt, wiadomosc) {
+    let str = obiekt.value;
+    let errorField = "blad_" + obiekt.name.substr(0, obiekt.name.length);
+    console.log(errorField);
+    if (bialeZnaki(str)) {
+        document.getElementById(errorField).innerHTML = wiadomosc;
+        obiekt.focus();
+        return false;
+    } else {
+        return true;
     }
+}
 
 function weryfikacja()
 {

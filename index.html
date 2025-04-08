@@ -4,6 +4,14 @@
     <title>Formularz osobowy</title>
     <script src="code.js"></script>
 </head>
+<style>
+    .blad_imie 
+    {
+        color: red;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+</style>
 <body>
     <form name="user_data">
         <table>
@@ -11,7 +19,7 @@
                 <td>Imię</td>
                 <td><input type="text" name="imie"></td>
             </tr>
-
+            <span class="blad" id="blad_imie"></span>
         <tr>
             <td>Wykształcenie </td>
             <td>
